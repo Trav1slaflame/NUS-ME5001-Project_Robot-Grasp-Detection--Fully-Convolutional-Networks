@@ -28,9 +28,9 @@ class CornellDataset(GraspDatasetBase):
         if ds_rotate:
             graspf = graspf[int(l*ds_rotate):] + graspf[:int(l*ds_rotate)]
 
-        # # Used for training!
-        # depthf = [f.replace('cpos.txt', 'd.tiff') for f in graspf]
-        # rgbf = [f.replace('d.tiff', 'r.png') for f in depthf]
+        # Used for training!
+        depthf = [f.replace('cpos.txt', 'd.tiff') for f in graspf]
+        rgbf = [f.replace('d.tiff', 'r.png') for f in depthf]
 
         # Used for testing!
         # depthf = ['data/captured_img/0.tiff', 'data/captured_img/1.tiff', 'data/captured_img/adv_1.tiff', 'data/captured_img/adv_2.tiff', 'data/captured_img/adv_3.tiff', 'data/captured_img/adv_4.tiff', 'data/captured_img/adv_5.tiff', 'data/captured_img/adv_6.tiff', 'data/captured_img/adv_7.tiff', 'data/captured_img/adv_c_1.tiff', 'data/captured_img/adv_c_2.tiff', 'data/captured_img/b_1.tiff', 'data/captured_img/b_2.tiff', 'data/captured_img/b_3.tiff', 'data/captured_img/b_4.tiff', 'data/captured_img/b_5.tiff', 'data/captured_img/b_6.tiff', 'data/captured_img/c_1.tiff', 'data/captured_img/c_2.tiff', 'data/captured_img/c_3.tiff']
@@ -81,13 +81,13 @@ class CornellDataset(GraspDatasetBase):
         # 'data/test_3/63.png','data/test_3/64.png','data/test_3/65.png','data/test_3/66.png','data/test_3/67.png','data/test_3/68.png','data/test_3/69.png','data/test_3/70.png',
         # 'data/test_3/71.png','data/test_3/72.png','data/test_3/73.png','data/test_3/74.png',]
 
-        depthf = ['data/test_4/0.tiff', 'data/test_4/1.tiff', 'data/test_4/2.tiff', 'data/test_4/3.tiff', 'data/test_4/4.tiff', 'data/test_4/5.tiff', 'data/test_4/6.tiff', 'data/test_4/7.tiff', 
-        'data/test_4/8.tiff', 'data/test_4/9.tiff', 'data/test_4/10.tiff', 'data/test_4/11.tiff', 'data/test_4/12.tiff', 'data/test_4/13.tiff', 'data/test_4/14.tiff', 'data/test_4/15.tiff', 
-        'data/test_4/16.tiff', 'data/test_4/21.tiff', 'data/test_4/22.tiff', 'data/test_4/23.tiff', 'data/test_4/24.tiff', 'data/test_4/25.tiff', 'data/test_4/26.tiff', 'data/test_4/27.tiff', 
-        'data/test_4/28.tiff']
-        rgbf = ['data/test_4/0.png', 'data/test_4/1.png', 'data/test_4/2.png', 'data/test_4/3.png', 'data/test_4/4.png', 'data/test_4/5.png', 'data/test_4/6.png', 'data/test_4/7.png', 'data/test_4/8.png', 
-        'data/test_4/9.png', 'data/test_4/10.png', 'data/test_4/11.png', 'data/test_4/12.png', 'data/test_4/13.png', 'data/test_4/14.png', 'data/test_4/15.png', 'data/test_4/16.png', 'data/test_4/21.png',
-        'data/test_4/22.png', 'data/test_4/23.png', 'data/test_4/24.png', 'data/test_4/25.png', 'data/test_4/26.png', 'data/test_4/27.png', 'data/test_4/28.png']
+        # depthf = ['data/test_4/0.tiff', 'data/test_4/1.tiff', 'data/test_4/2.tiff', 'data/test_4/3.tiff', 'data/test_4/4.tiff', 'data/test_4/5.tiff', 'data/test_4/6.tiff', 'data/test_4/7.tiff', 
+        # 'data/test_4/8.tiff', 'data/test_4/9.tiff', 'data/test_4/10.tiff', 'data/test_4/11.tiff', 'data/test_4/12.tiff', 'data/test_4/13.tiff', 'data/test_4/14.tiff', 'data/test_4/15.tiff', 
+        # 'data/test_4/16.tiff', 'data/test_4/21.tiff', 'data/test_4/22.tiff', 'data/test_4/23.tiff', 'data/test_4/24.tiff', 'data/test_4/25.tiff', 'data/test_4/26.tiff', 'data/test_4/27.tiff', 
+        # 'data/test_4/28.tiff']
+        # rgbf = ['data/test_4/0.png', 'data/test_4/1.png', 'data/test_4/2.png', 'data/test_4/3.png', 'data/test_4/4.png', 'data/test_4/5.png', 'data/test_4/6.png', 'data/test_4/7.png', 'data/test_4/8.png', 
+        # 'data/test_4/9.png', 'data/test_4/10.png', 'data/test_4/11.png', 'data/test_4/12.png', 'data/test_4/13.png', 'data/test_4/14.png', 'data/test_4/15.png', 'data/test_4/16.png', 'data/test_4/21.png',
+        # 'data/test_4/22.png', 'data/test_4/23.png', 'data/test_4/24.png', 'data/test_4/25.png', 'data/test_4/26.png', 'data/test_4/27.png', 'data/test_4/28.png']
 
         # depthf = ['data/test_5/1.tiff', 'data/test_5/2.tiff','data/test_5/3.tiff']
         # rgbf = ['data/test_5/1.png', 'data/test_5/2.png','data/test_5/3.png']

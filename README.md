@@ -1,12 +1,12 @@
 # README
 
-# **"Real-Time Grasp Detection Using Convolutional Neural Networks" Reproduce**
+# NUS-ME5001-Project_Robot-Grasp-Detection--Fully-Convolutional-Networks
 
-(The model is uploaded but you can train better yourself if you have the time and the machine or if you are learning **PyTorch/ML**. Please bear in mind that you need to read and adapt to your needs some parts of the code. Feel free to open an issue if you need help. I will try to update README and comment on the code.)
+(Please bear in mind that you need to read and adapt to your needs some parts of the code. Feel free to open an issue if you need help. I will try to update README and comment on the code.)
 
-This implementation is mainly based on the algorithm from Joseph Redmon and Anelia Angelova described in https://arxiv.org/abs/1412.3128.
+This implementation is modified mainly based on the algorithm from Douglas Morrison, Peter Corke, and Jürgen Leitner described in [https://arxiv.org/abs/1412.3128](https://arxiv.org/abs/1804.05172).
 
-The method uses an RGB image to find a single grasp. A deep convolutional neural network is applied to an image of an object and as a result, one gets the coordinates, dimensions, and orientation of one possible grasp.
+In this repo, we explore more about the application of fully convolutional networks in robotic grasp detection. This kind of method tries to solve the robotic grasp problem utilizing some ideas from segmentation tasks and can predict pixel-level robotic grasp candidates for objects. By using this method, we can predict multiple grasp candidates for a single object and can make grasp predictions for multiple objects simultaneously.
 
 The images used to train the network model are from **[Cornell Grasping Dataset](https://www.kaggle.com/oneoneliu/cornell-grasp)**.
 
@@ -24,7 +24,7 @@ Currently, only the **[Cornell Grasping Dataset](https://www.kaggle.com/oneonel
 
 ## **Cornell Grasping Dataset Preparation**
 
-1. Download the and extract **[Cornell Grasping Dataset](https://www.kaggle.com/oneoneliu/cornell-grasp)**.
+1. Download and extract **[Cornell Grasping Dataset](https://www.kaggle.com/oneoneliu/cornell-grasp)**.
 2. Place the data to make the data folder like:
 
 ```bash
@@ -37,16 +37,16 @@ ${robot-grasp-detection}
         |   |-- pcd0100cpos.txt
         |   |-- pcd0100d.tiff
         |   |-- pcd0100r.png
-	|   ......
-	|-- 02
-	|-- 03
-	|-- 04
-	|-- 05
-	|-- 06
-	|-- 07
-	|-- 08
-	|-- 09
-	|-- 10
+				|   ......
+				|-- 02
+				|-- 03
+				|-- 04
+				|-- 05
+				|-- 06
+				|-- 07
+				|-- 08
+				|-- 09
+				|-- 10
         `-- backgrounds
             |-- pcdb0002r.png
             ......
@@ -54,7 +54,9 @@ ${robot-grasp-detection}
 
 # **Training**
 
-Training is done by the `train.py` script. Some of the parameters that need to be adjusted during the training process have been sorted into script `opts.py`. You can directly change the value of each corresponding parameter in script `opts.py`. 
+Training is done by the `train_ggcnn.py` script. Some of the parameters that need to be adjusted during the training process have been sorted into script `train_ggcnn.py`. You can directly change the value of each corresponding parameter in script `train_ggcnn.py`. 
+
+In script `cornell_data.py` (starting from line 31) and script `image.py` (starting from line 206), keep the code for training and comment the code for testing.
 
 Some basic examples:
 
@@ -67,7 +69,9 @@ Trained models are saved in `output/models` by default, with the validation sc
 
 # **Evaluation/Visualisation**
 
-Evaluation or visualisation of the trained networks is done using the `eval_resnet50.py` script. Some of the parameters that need to be adjusted during the evaluation process have been sorted into script `opts.py` (eval_model part). You can directly change the value of each corresponding parameter in script `opts.py` (eval_model part). 
+Evaluation or visualisation of the trained networks is done using the `eval_ggcnn.py` script. Some of the parameters that need to be adjusted during the evaluation process have been sorted into script `eval_ggcnn.py`. You can directly change the value of each corresponding parameter in script `eval_ggcnn.py`. 
+
+In script `cornell_data.py` (starting from line 35 and picking a set of pics for testing) and script `image.py` (starting from line 209 and using Test Method 1), keep the code for testing and comment the code for training.
 
 Important flags are:
 

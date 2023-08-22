@@ -203,14 +203,14 @@ class DepthImage(Image):
         """
         Normalise by subtracting the mean and clippint [-1, 1]
         """
-        # # Used for training!
-        # self.img = np.clip((self.img - self.img.mean()), -1, 1)
+        # Used for training!
+        self.img = np.clip((self.img - self.img.mean()), -1, 1)
 
-        # Used for testing! Meathod 1
-        self.img -= self.img.min()
-        self.img = self.img / self.img.max()
-        self.img *= 0.7
-        self.img -= self.img.mean()
+        # # Used for testing! Method 1
+        # self.img -= self.img.min()
+        # self.img = self.img / self.img.max()
+        # self.img *= 0.7
+        # self.img -= self.img.mean()
 
         # Method 2
         # mean1 = self.img.mean()
