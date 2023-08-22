@@ -37,7 +37,7 @@ ${NUS-ME5001-Project_Robot-Grasp-Detection--Fully-Convolutional-Networks}
         |   |-- pcd0100cpos.txt
         |   |-- pcd0100d.tiff
         |   |-- pcd0100r.png
-		|   ......
+	|   ......
 	|-- 02
 	|-- 03
 	|-- 04
