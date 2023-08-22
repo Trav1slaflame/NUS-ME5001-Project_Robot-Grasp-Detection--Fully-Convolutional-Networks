@@ -28,7 +28,7 @@ Currently, only the **[Cornell Grasping Dataset](https://www.kaggle.com/oneonel
 2. Place the data to make the data folder like:
 
 ```bash
-${robot-grasp-detection}
+${NUS-ME5001-Project_Robot-Grasp-Detection--Fully-Convolutional-Networks}
 |-- data
 `-- |-- cornell
     `-- |-- 01
@@ -37,16 +37,16 @@ ${robot-grasp-detection}
         |   |-- pcd0100cpos.txt
         |   |-- pcd0100d.tiff
         |   |-- pcd0100r.png
-				|   ......
-				|-- 02
-				|-- 03
-				|-- 04
-				|-- 05
-				|-- 06
-				|-- 07
-				|-- 08
-				|-- 09
-				|-- 10
+		|   ......
+		|-- 02
+		|-- 03
+		|-- 04
+		|-- 05
+		|-- 06
+		|-- 07
+		|-- 08
+		|-- 09
+		|-- 10
         `-- backgrounds
             |-- pcdb0002r.png
             ......
